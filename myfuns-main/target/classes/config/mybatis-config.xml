@@ -7,7 +7,25 @@
 		<setting name="defaultStatementTimeout" value="30" />
 	</settings>
 	
+	<typeAliases>
+		<typeAlias type="com.wuzhiqiang.main.domain.Novel" alias="novel"/>
+		<typeAlias type="com.wuzhiqiang.main.dto.NovelCondition" alias="novelCondition"/>
+	</typeAliases>
 	
-
-
+	<environments default="default">
+		
+		<environment id="default">
+		<transactionManager type="JDBC"></transactionManager>
+		<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/member?characterEncoding=utf-8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+		</dataSource>
+		</environment>
+		
+	</environments>
+	<mappers>
+		<mapper resource="config/mapper/novel-mapper.xml"/>
+	</mappers>
 </configuration>
